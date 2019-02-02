@@ -15,9 +15,9 @@ We'll use some code called [webweb](https://webwebpage.github.io) that makes net
 
 The code plots the network as a grid, as described above, and it freeze the position of the nodes. **You can move the nodes around with your mouse if you like** and trace the escape path. I get a path length of 18. You can also uncheck the box that freezes node movement, and the system will "relax" allowing you to chart the number of hops from the Goal to the Boundary. Image here, followed by the code and notes to reproduce all of this.
 
-![grid view](538/grid.png)
+![grid view](grid.png)
 
-![relaxed view](538/relaxed.png "Logo Title Text 1")
+![relaxed view](relaxed.png)
 
 
 
