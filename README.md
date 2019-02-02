@@ -1,4 +1,4 @@
-#538 Puzzle - Can you escape a maze with no walls?
+# 538 Puzzle - Can you escape a maze with no walls?
 
 The original puzzle is posted [here](https://fivethirtyeight.com/features/can-you-escape-a-maze-without-walls/) by [Oliver Roeder](http://twitter.com/ollie) from the desk of Tom Hanrahan.
 
@@ -8,16 +8,20 @@ Second, let's reconsider the problem as an *escape* problem. You're at the smile
 
 The key to both of the solutions below is that we'll split each grid square into what it really is: four nodes (top left bottom right), each of which has a different ability to connect to neighboring nodes. 
 
-**Network Visualization Approach**
+## Network Visualization Approach
 Why don't we just *build* this network and color the nodes by the type of node. If there is a connected path between a goal node and a boundary node, we'll just be able to see it. 
 
 We'll use some code called [webweb](https://webwebpage.github.io) that makes network visualizations easy from Python, recently rewritten by my grad student, [Hunter Wapman](http://twitter.com/hneutr). 
 
-The code plots the network as a grid, as described above, and it freeze the position of the nodes. **You can move the nodes around with your mouse if you like** and trace the escape path. I get a path length of 19. You can also uncheck the box that freezes node movement, and the system will "relax" allowing you to chart the number of hops from the Goal to the Boundary. Image here, followed by the code and notes to reproduce all of this.
+The code plots the network as a grid, as described above, and it freeze the position of the nodes. **You can move the nodes around with your mouse if you like** and trace the escape path. I get a path length of 18. You can also uncheck the box that freezes node movement, and the system will "relax" allowing you to chart the number of hops from the Goal to the Boundary. Image here, followed by the code and notes to reproduce all of this.
+
+![grid view](538/grid.png)
+
+![relaxed view](538/relaxed.png "Logo Title Text 1")
 
 
 
-**Network Traversal Approach (no viz)**
+## Network Traversal Approach (no viz)
 Number the positions of the grid like a matrix, with (1,1) being the upper left entry, and (n,n) being the bottom right entry. Now consider a network whose directed edges describe movement as dictated by the rules of the maze... but rather than considering each square in the gride as a single vertex, let each square in the grid be represented by four vertices, enumerated {1,2,3,4} corresponding to {up,left,down,right} directions. 
 
 This means that we're going to take the $n^2$ positions in the grid and from them create $4n^2$ vertices in a network of one-hop moves. We'll also add another set of vertices representing the possible entry points to the game board from the outside, another $4n$ vertices. In total, our graph will have $N = 4n^2 + 4n$ vertices, or, if you've been taught to factor everything, $N = 4n(n+1)$ vertices. 
