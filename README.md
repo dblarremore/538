@@ -17,7 +17,7 @@ The code plots the network as a grid, as described above, and it freeze the posi
 
 Screenshots are below, or you can [play with the viz yourself](http://danlarremore.com/538Maze.html).
 
-Further nerdsniping: generate a square board of size $n^2$ with a single randomly placed goal, and the remaining squares drawn IID from a categorical distribution over $[L,R,S,U,?,X]$. How does the probability of path existence vary depending on the parameter vector of the categorical distribution? For instance, if the parameter is set to generate $X$ with probability one, then the goal is only reachable on the boundary, which occurs w.p. $4(n-1)/n^2$. Etc. 
+**Further nerdsniping**: generate a square board of size n-by-n with a single randomly placed goal, and the remaining squares drawn IID from a categorical distribution over [L,R,S,U,?,X]. How does the probability of path existence vary depending on the parameter vector of the categorical distribution? For instance, if the parameter is set to generate X with probability one, then the goal is only reachable on the boundary, which occurs w.p. 4(n-1)/n^2. Etc. 
 
 ![grid view](grid.png)
 
