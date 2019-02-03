@@ -8,12 +8,12 @@ Second, let's reconsider the problem as an *escape* problem. You're at the smile
 
 The key to both of the solutions below is that we'll split each grid square into what it really is: four nodes (top left bottom right), each of which has a different ability to connect to neighboring nodes. 
 
-## Network Visualization Approach
+**Network Visualization Approach**
 Why don't we just *build* this network and color the nodes by the type of node. If there is a connected path between a goal node and a boundary node, we'll just be able to see it. 
 
 We'll use some code called [webweb](https://webwebpage.github.io) that makes network visualizations easy from Python, recently rewritten by my grad student, [Hunter Wapman](http://twitter.com/hneutr). 
 
-The code plots the network as a grid, as described above, and it freeze the position of the nodes. **You can move the nodes around with your mouse if you like** and trace the escape path. I get a path length of 34. You can also uncheck the box that freezes node movement, and the system will "relax" allowing you to chart the number of hops from the Goal to the Boundary. Image here, followed by the code and notes to reproduce all of this.
+The code plots the network as a grid, as described above, and it freeze the position of the nodes. **You can move the nodes around with your mouse if you like** and trace the escape path. I get a path length of 34. You can also uncheck the box that freezes node movement, and the system will "relax" allowing you to chart the number of hops from the Goal to the Boundary. I think it helps to set the node size to "onPath" to highlight the minimum path.
 
 ![grid view](grid.png)
 
